@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="doReady()">
+<img src="pikachu.png" id="pika" style="position:absolute;left:50px; top:50px;" height="100" width="80"/>
+<script>
+let pik = document.getElementById("pika");
+function goUp() {
+    pik.style.top = parseInt(pik.style.top) - 10 + 'px';
+}
+function goDown() {
+    pik.style.top = parseInt(pik.style.top) + 10 + 'px';
+}
+function goLeft() {
+    pik.style.left = parseInt(pik.style.left) - 10 + 'px';
+}
+function goRight() {
+    pik.style.left = parseInt(pik.style.left) + 10 + 'px';
+}
+function movePik(evt) {
+    switch (evt.keyCode) {
+        case 37:
+            goLeft();
+            break;
+        case 39:
+            goRight();
+            break;
+        case 38:
+            goUp();
+            break;
+        case 40:
+            goDown();
+            break;
+    }
+}
+function doReady() {
+    window.addEventListener('keydown',movePik);
+}
+</script>
+</body>
+</html>
